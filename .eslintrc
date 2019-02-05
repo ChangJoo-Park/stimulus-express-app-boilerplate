@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "prettier-standard"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "ecmaFeatures": {
+      "globalReturn": false
+    }
+  },
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolve": {
+      "moduleDirectory": ["node_modules", "client", "server"]
+    },
+    "ecmaFeatures": {
+      "classes": true,
+      "jsx": true
+    }
+  }
+}

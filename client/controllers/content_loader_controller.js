@@ -1,10 +1,10 @@
-import { Controller } from "stimulus"
+import { Controller } from 'stimulus'
 
 export default class extends Controller {
   connect() {
     this.load()
 
-    if (this.data.has("refreshInterval")) {
+    if (this.data.has('refreshInterval')) {
       this.startRefreshing()
     }
   }
@@ -14,7 +14,7 @@ export default class extends Controller {
   }
 
   load() {
-    fetch(this.data.get("url"))
+    fetch(this.data.get('url'))
       .then(response => response.text())
       .then(html => {
         this.element.innerHTML = html
@@ -24,7 +24,7 @@ export default class extends Controller {
   startRefreshing() {
     this.refreshTimer = setInterval(() => {
       this.load()
-    }, this.data.get("refreshInterval"))
+    }, this.data.get('refreshInterval'))
   }
 
   stopRefreshing() {
