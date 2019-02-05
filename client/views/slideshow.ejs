@@ -1,4 +1,4 @@
-<% include layout/head %>
+<% layout('./layout/application') -%>
 
 <div data-controller="slideshow">
   <button data-action="slideshow#previous">←</button>
@@ -9,5 +9,3 @@
   <div data-target="slideshow.slide" class="slide">🙉</div>
   <div data-target="slideshow.slide" class="slide">🙊</div>
 </div>
-
-<% include layout/tail %>

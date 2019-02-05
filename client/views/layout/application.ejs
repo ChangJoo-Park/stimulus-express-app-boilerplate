@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Stimulus: <%= currentPage.title %> Example</title>
+  <title>Stimulus: rsExample</title>
   <link rel="stylesheet" href="/main.css">
   <script src="/main.js" defer></script>
 </head>
@@ -15,13 +15,17 @@
 
       <ul class="nav">
         <% pages.forEach(page => { %>
-          <li>
-            <a href="<%= page.path %>" class="<%= page.path == currentPage.path ? " active " : " " %>">
-              <%= page.title %>
-            </a>
-          </li>
-          <% }) %>
+        <li>
+          <a href="<%= page.path %>" class="<%= page.path == currentPage.path ? " active " : " " %>">
+            <%= page.title %>
+          </a>
+        </li>
+        <% }) %>
       </ul>
     </div>
 
     <div class="container">
+      <%- body %>
+    </div>
+  </main>
+</body>
