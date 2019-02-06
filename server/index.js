@@ -2,8 +2,11 @@ const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const webpackMiddleware = require('webpack-dev-middleware')
-const webpackConfig = require('../webpack.config')
 const viewEngine = require('ejs-mate')
+const compression = require('compression')
+
+const webpackConfig = require('../webpack.config')
+
 const app = express()
 const port = 9000
 const publicPath = path.join(__dirname, '../', 'public')
@@ -16,6 +19,15 @@ module.exports = function() {
 
   app.use(express.static(publicPath))
   app.use(webpackMiddleware(webpack(webpackConfig)))
+
+  if (process.env['NODE_ENV'] === 'production') {
+    app.use(
+      compression({
+        level: 9,
+        memLevel: 9
+      })
+    )
+  }
 
   const pages = [
     {
