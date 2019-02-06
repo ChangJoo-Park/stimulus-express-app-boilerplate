@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node server.js",
-    "dev": "nodemon --watch ./server --watch ./client server.js",
+    "dev": "cross-env NODE_ENV=development nodemon --watch ./server --watch ./client server.js",
     "webpack:dev": "cross-env NODE_ENV=development webpack",
     "webpack:prod": "cross-env NODE_ENV=production webpack",
     "lint": "eslint ./"
